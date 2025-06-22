@@ -1,0 +1,29 @@
+how to do these step by step 
+
+HQ datacenter:
+People: 3 administrators.
+Resources: 3 PCs, one server with (HTTP, HTTPS, FTP, DHCP, and DNS) services.
+• Each device in this subnet must have a dynamic IP address except for (the servers, PC1, and the gateways must be static).
+Each JNR remote office, including Amman Office: 
+• Resources: one PC per subnet used to access the e-services required using a wired connection
+• Each station must use a different IP subnet than the other remote offices or HQ VLANS.
+• Each device in each subnet must have a static IP address.
+
+All needed IP subnets are below: 
+VLAN#     Site Name (VLAN Name)    VLAN Subnet IP      Device IP
+10                 Data Center (DC)                    10.0.0.0/8                 Server 10.0.0.100 PC1 10.0.0.10 GW 10.0.0.1
+20               HQ Employees (EMP)             20.0.0.0/8                PC1 20.0.0.10 GW 20.0.0.1
+30               HQ Human Resources          (HR) 30.0.0.0/8       PC1 30.0.0.10 GW 30.0.0.1
+40               HQ Guests                                  (GN) 40.0.0.0/8      PC1 40.0.0.10 GW 40.0.0.1
+
+
+LAN #       Name / Place                   LAN Subnet IP          Device IP
+1                 AQABA VLAN 50            50.0.0.0/8                    PC1 50.0.0.10  GW 50.0.0.1
+2                AQABA VLAN 60 DC     60.0.0.0/8                    PC1 60.0.0.10  GW 60.0.0.1
+3               SAUDI ARABIA                  70.0.0.0/8                    PC1 70.0.0.10  GW 70.0.0.1
+4               TURKEY                                80.0.0.0/8                   PC1 80.0.0.10  GW 80.0.0.1
+5                IRBID                                     90.0.0.0/8                   PC1 90.0.0.10  GW 90.0.0.1
+6              WAN HQ-AQABA              100.0.0.0/8                 HQ-INT 100.0.0.1  AQ-INT 100.0.0.2
+7              WAN HQ-IRBID                  110.0.0.0/8                   HQ-INT 110.0.0.1  IR-INT 110.0.0.2
+8              WAN HQ-SAUDI                120.0.0.0/8                  HQ-INT 120.0.0.1  SA-INT 120.0.0.2
+9               WAN HQ-TURKEY           130.0.0.0/8                  HQ-INT 130.0.0.1  TU-INT 130.0.0.2
